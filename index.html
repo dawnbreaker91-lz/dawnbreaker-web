@@ -7,19 +7,28 @@
       name="description"
       content="摄影、公路车改装与骑行心得。一个关于光线、机械与道路的个人档案。"
     />
+    <meta property="og:title" content="DawnBreaker’s Web" />
+    <meta property="og:description" content="摄影、公路车改装与骑行心得。一个关于光线、机械与道路的个人档案。" />
+    <meta property="og:image" content="https://dawnbreaker91-lz.github.io/dawnbreaker-web/hero-dawn-road.png" />
     <title>DawnBreaker’s Web — Photography, Bikes &amp; Road Notes</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <main>
+      <div class="opening-sequence" aria-hidden="true">
+        <span class="opening-logo"><b>DB</b></span>
+        <i></i>
+      </div>
+      <div class="scroll-progress" aria-hidden="true"></div>
       <header class="site-header">
         <a class="brand" href="#top" aria-label="DawnBreaker’s Web 首页">
-          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-logo" aria-hidden="true"><b>DB</b></span>
           <span>DawnBreaker’s Web</span>
         </a>
         <nav aria-label="主导航">
           <a href="#stories">探索</a>
           <a href="#about">关于</a>
+          <a href="#contact">联系</a>
           <a class="nav-index" href="#index">内容索引</a>
         </nav>
       </header>
@@ -40,7 +49,7 @@
         <div
           class="hero-visual"
           role="img"
-          aria-label="等待替换为破晓公路摄影作品的主视觉区域"
+          aria-label="红色破晓天空下蜿蜒穿过山脉的公路"
         >
           <div class="visual-grid" aria-hidden="true"></div>
           <div class="sun-line" aria-hidden="true"></div>
@@ -48,17 +57,17 @@
             <span>FIELD NOTE / 001</span>
             <span>31°N · FIRST LIGHT</span>
           </div>
-          <p>YOUR FEATURED PHOTOGRAPH</p>
+          <p>DAWN ROAD / 001</p>
         </div>
       </section>
 
-      <section class="manifesto" aria-label="网站简介">
+      <section class="manifesto" aria-label="网站简介" data-reveal>
         <p>LIGHT</p><span aria-hidden="true">×</span>
         <p>MACHINE</p><span aria-hidden="true">×</span>
         <p>MOTION</p>
       </section>
 
-      <section class="stories" id="stories">
+      <section class="stories" id="stories" data-reveal>
         <div class="section-heading">
           <div>
             <p class="eyebrow">THREE WAYS OF SEEING</p>
@@ -70,7 +79,7 @@
         </div>
 
         <div class="feature-grid">
-          <article class="feature-card feature-photo">
+          <article class="feature-card feature-photo" data-reveal>
             <div class="feature-art" aria-hidden="true"><span>01</span><i></i></div>
             <div class="feature-content">
               <p class="feature-label">PHOTOGRAPHY</p>
@@ -80,7 +89,7 @@
             </div>
           </article>
 
-          <article class="feature-card feature-bike">
+          <article class="feature-card feature-bike" data-reveal>
             <div class="feature-art" aria-hidden="true"><span>02</span><i></i></div>
             <div class="feature-content">
               <p class="feature-label">BIKE BUILDS</p>
@@ -90,7 +99,7 @@
             </div>
           </article>
 
-          <article class="feature-card feature-notes">
+          <article class="feature-card feature-notes" data-reveal>
             <div class="feature-art" aria-hidden="true"><span>03</span><i></i></div>
             <div class="feature-content">
               <p class="feature-label">ROAD NOTES</p>
@@ -102,7 +111,7 @@
         </div>
       </section>
 
-      <section class="about" id="about">
+      <section class="about" id="about" data-reveal>
         <div class="about-number">DB / 01</div>
         <div class="about-copy">
           <p class="eyebrow">ABOUT DAWNBREAKER</p>
@@ -114,23 +123,40 @@
         </div>
       </section>
 
-      <section class="index-strip" id="index">
+      <section class="contact" id="contact" data-reveal>
+        <p class="contact-kicker">LET'S TALK · CONTACT</p>
+        <div class="contact-copy">
+          <h2>关于摄影、机械，<br />以及值得骑过的路。</h2>
+          <div class="contact-side">
+            <p>
+              如果你也关注清晨的光、公路车改装，或者一条值得反复骑行的路线，
+              欢迎保持联系。
+            </p>
+            <span class="contact-link" aria-label="联系入口即将开放">
+              联系入口 · 即将开放 <i aria-hidden="true">↗</i>
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <section class="index-strip" id="index" data-reveal>
         <p>ARCHIVE STATUS</p>
         <strong>001</strong>
         <span>网站框架已经建立，等待第一组真实内容。</span>
-        <a href="mailto:hello@example.com" aria-label="通过邮件联系，当前为待替换地址">
-          CONTACT ↗
+        <a href="#contact" aria-label="前往联系区域">
+          CONTACT ↓
         </a>
       </section>
 
       <footer>
         <a class="brand footer-brand" href="#top">
-          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-logo" aria-hidden="true"><b>DB</b></span>
           <span>DawnBreaker’s Web</span>
         </a>
         <p>Photography · Bike Builds · Road Notes</p>
         <p>© 2026 DAWNBREAKER</p>
       </footer>
     </main>
+    <script src="./interactions.js"></script>
   </body>
 </html>
