@@ -1,0 +1,576 @@
+:root {
+  --ink: #11110f;
+  --paper: #f0eee7;
+  --muted: #9e9b91;
+  --line: rgba(240, 238, 231, 0.18);
+  --accent: #f2c500;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--ink);
+}
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: Arial, "Helvetica Neue", sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-header {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 88px;
+  padding: 0 clamp(24px, 4vw, 72px);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  letter-spacing: 0.02em;
+}
+
+.brand-mark {
+  display: inline-block;
+  width: 4px;
+  height: 28px;
+  background: var(--accent);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 3vw, 48px);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+}
+
+nav a {
+  transition: color 180ms ease;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  color: var(--accent);
+}
+
+.nav-index {
+  padding: 13px 17px;
+  border: 1px solid rgba(240, 238, 231, 0.5);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  min-height: 100svh;
+  padding-top: 88px;
+}
+
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px clamp(28px, 5.5vw, 104px) 68px clamp(24px, 4vw, 72px);
+}
+
+.eyebrow {
+  margin: 0 0 28px;
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  max-width: 760px;
+  margin-bottom: 40px;
+  font-family: "Iowan Old Style", "Baskerville", Georgia, serif;
+  font-size: clamp(66px, 7.8vw, 142px);
+  font-weight: 400;
+  line-height: 0.88;
+  letter-spacing: -0.065em;
+}
+
+h1 em {
+  color: transparent;
+  font-weight: 400;
+  -webkit-text-stroke: 1px rgba(240, 238, 231, 0.62);
+}
+
+.hero-intro {
+  max-width: 510px;
+  margin-bottom: 40px;
+  color: #c8c5bb;
+  font-size: clamp(14px, 1.2vw, 18px);
+  line-height: 1.85;
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 180px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--accent);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+}
+
+.text-link span {
+  color: var(--accent);
+  font-size: 18px;
+}
+
+.hero-visual {
+  position: relative;
+  min-height: 620px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 72% 35%, rgba(242, 197, 0, 0.46), transparent 2.2%),
+    radial-gradient(circle at 71% 36%, rgba(242, 197, 0, 0.16), transparent 18%),
+    linear-gradient(153deg, transparent 0 52%, rgba(240, 238, 231, 0.07) 52.2% 52.5%, transparent 52.7%),
+    linear-gradient(120deg, #131815 0%, #27342e 33%, #66552d 56%, #171713 100%);
+}
+
+.hero-visual::before,
+.hero-visual::after {
+  position: absolute;
+  content: "";
+  bottom: -4%;
+  width: 85%;
+  height: 66%;
+  background: #090b0a;
+  clip-path: polygon(0 100%, 15% 52%, 26% 70%, 44% 19%, 57% 53%, 70% 28%, 100% 100%);
+}
+
+.hero-visual::before {
+  left: -16%;
+  opacity: 0.84;
+}
+
+.hero-visual::after {
+  right: -26%;
+  bottom: -14%;
+  transform: scaleX(-1);
+  opacity: 0.58;
+}
+
+.visual-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 25% 25%;
+}
+
+.sun-line {
+  position: absolute;
+  z-index: 2;
+  top: 35%;
+  right: 0;
+  width: 34%;
+  height: 1px;
+  background: var(--accent);
+}
+
+.hero-visual > p {
+  position: absolute;
+  z-index: 3;
+  right: 30px;
+  bottom: 35%;
+  color: rgba(240, 238, 231, 0.6);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  writing-mode: vertical-rl;
+}
+
+.visual-caption {
+  position: absolute;
+  z-index: 3;
+  inset: auto 28px 28px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+}
+
+.manifesto {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  min-height: 155px;
+  padding: 28px clamp(24px, 7vw, 130px);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.manifesto p {
+  margin: 0;
+  font-family: "Iowan Old Style", Georgia, serif;
+  font-size: clamp(22px, 3vw, 48px);
+  letter-spacing: 0.04em;
+}
+
+.manifesto span {
+  color: var(--accent);
+  font-size: 15px;
+}
+
+.stories {
+  padding: clamp(90px, 11vw, 180px) clamp(24px, 4vw, 72px);
+}
+
+.section-heading {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: end;
+  gap: 60px;
+  margin-bottom: 72px;
+}
+
+.section-heading h2,
+.about h2 {
+  max-width: 850px;
+  margin-bottom: 0;
+  font-family: "Iowan Old Style", "Baskerville", Georgia, serif;
+  font-size: clamp(40px, 5.5vw, 90px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+}
+
+.section-note {
+  max-width: 510px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 22px;
+}
+
+.feature-card {
+  min-height: 620px;
+  border: 1px solid var(--line);
+  background: #151512;
+}
+
+.feature-photo {
+  grid-column: span 5;
+}
+
+.feature-bike,
+.feature-notes {
+  grid-column: span 7;
+}
+
+.feature-notes {
+  grid-column-start: 6;
+}
+
+.feature-art {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 355px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+}
+
+.feature-art > span {
+  z-index: 2;
+  color: rgba(240, 238, 231, 0.82);
+  font-family: "Iowan Old Style", Georgia, serif;
+  font-size: 110px;
+  font-style: italic;
+}
+
+.feature-art i {
+  position: absolute;
+  display: block;
+  width: 180px;
+  height: 180px;
+  border: 1px solid rgba(240, 238, 231, 0.3);
+  border-radius: 50%;
+}
+
+.feature-photo .feature-art {
+  background: radial-gradient(circle at 50% 48%, #d2a500 0 2%, transparent 2.5%), linear-gradient(135deg, #202b26, #604e26 48%, #111);
+}
+
+.feature-bike .feature-art {
+  background: linear-gradient(155deg, #393936, #111 48%, #302e26);
+}
+
+.feature-bike .feature-art i {
+  width: 250px;
+  height: 125px;
+  border-radius: 50%;
+  transform: rotate(-9deg);
+}
+
+.feature-notes .feature-art {
+  background: repeating-linear-gradient(115deg, transparent 0 35px, rgba(240, 238, 231, 0.05) 36px), linear-gradient(130deg, #1e2422, #121210 70%);
+}
+
+.feature-content {
+  padding: 34px clamp(25px, 3.2vw, 52px) 40px;
+}
+
+.feature-label,
+.coming-soon {
+  color: var(--accent);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.feature-content h3 {
+  margin: 20px 0 18px;
+  font-family: "Iowan Old Style", Georgia, serif;
+  font-size: clamp(28px, 3vw, 46px);
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.feature-content > p:not(.feature-label) {
+  max-width: 500px;
+  margin-bottom: 28px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.coming-soon {
+  display: inline-block;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  color: #c8c5bb;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 0.55fr 1.45fr;
+  min-height: 650px;
+  padding: clamp(80px, 10vw, 170px) clamp(24px, 7vw, 130px);
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.about-number {
+  color: #7d7a70;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+}
+
+.about .eyebrow {
+  color: #927900;
+}
+
+.about-copy > p:last-child {
+  max-width: 750px;
+  margin: 50px 0 0 auto;
+  color: #55534d;
+  font-size: clamp(15px, 1.4vw, 19px);
+  line-height: 1.9;
+}
+
+.index-strip {
+  display: grid;
+  grid-template-columns: 1fr auto 2fr auto;
+  align-items: center;
+  gap: clamp(20px, 4vw, 70px);
+  min-height: 160px;
+  padding: 30px clamp(24px, 4vw, 72px);
+  border-bottom: 1px solid var(--line);
+}
+
+.index-strip p,
+.index-strip span,
+.index-strip a {
+  margin: 0;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+}
+
+.index-strip strong {
+  color: var(--accent);
+  font-family: "Iowan Old Style", Georgia, serif;
+  font-size: 50px;
+  font-weight: 400;
+}
+
+.index-strip span {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.index-strip a {
+  padding-bottom: 9px;
+  border-bottom: 1px solid var(--accent);
+}
+
+footer {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: end;
+  min-height: 260px;
+  padding: 60px clamp(24px, 4vw, 72px) 42px;
+}
+
+footer p {
+  margin: 0;
+  color: #77756d;
+  font-size: 9px;
+  letter-spacing: 0.13em;
+}
+
+footer p:last-child {
+  text-align: right;
+}
+
+.footer-brand {
+  align-self: end;
+}
+
+@media (max-width: 900px) {
+  .site-header {
+    height: 76px;
+  }
+
+  nav a:not(.nav-index) {
+    display: none;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 76px;
+  }
+
+  .hero-copy {
+    min-height: 680px;
+  }
+
+  .hero-visual {
+    min-height: 70svh;
+  }
+
+  .section-heading,
+  .about {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading {
+    gap: 34px;
+  }
+
+  .feature-photo,
+  .feature-bike,
+  .feature-notes {
+    grid-column: 1 / -1;
+  }
+
+  .about {
+    gap: 70px;
+  }
+
+  .about-copy > p:last-child {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 620px) {
+  .brand {
+    font-size: 14px;
+  }
+
+  .nav-index {
+    padding: 10px;
+    font-size: 9px;
+  }
+
+  .hero-copy {
+    min-height: 620px;
+    padding-top: 58px;
+  }
+
+  h1 {
+    font-size: clamp(58px, 18vw, 86px);
+  }
+
+  .manifesto {
+    min-height: 110px;
+  }
+
+  .manifesto p {
+    font-size: 16px;
+  }
+
+  .feature-card {
+    min-height: auto;
+  }
+
+  .feature-art {
+    height: 260px;
+  }
+
+  .index-strip {
+    grid-template-columns: auto 1fr;
+  }
+
+  .index-strip span {
+    grid-column: 1 / -1;
+  }
+
+  .index-strip a {
+    justify-self: start;
+  }
+
+  footer {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  footer p:last-child {
+    text-align: left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
