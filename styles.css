@@ -3,7 +3,7 @@
   --paper: #f0eee7;
   --muted: #9e9b91;
   --line: rgba(240, 238, 231, 0.18);
-  --accent: #f2c500;
+  --accent: #e10600;
 }
 
 * {
@@ -152,10 +152,10 @@ h1 em {
   min-height: 620px;
   overflow: hidden;
   background:
-    radial-gradient(circle at 72% 35%, rgba(242, 197, 0, 0.46), transparent 2.2%),
-    radial-gradient(circle at 71% 36%, rgba(242, 197, 0, 0.16), transparent 18%),
+    radial-gradient(circle at 72% 35%, rgba(225, 6, 0, 0.52), transparent 2.2%),
+    radial-gradient(circle at 71% 36%, rgba(225, 6, 0, 0.18), transparent 18%),
     linear-gradient(153deg, transparent 0 52%, rgba(240, 238, 231, 0.07) 52.2% 52.5%, transparent 52.7%),
-    linear-gradient(120deg, #131815 0%, #27342e 33%, #66552d 56%, #171713 100%);
+    linear-gradient(120deg, #120f10 0%, #261719 33%, #59191c 56%, #171313 100%);
 }
 
 .hero-visual::before,
@@ -297,7 +297,7 @@ h1 em {
 }
 
 .feature-notes {
-  grid-column-start: 6;
+  grid-column: 6 / span 7;
 }
 
 .feature-art {
@@ -328,11 +328,11 @@ h1 em {
 }
 
 .feature-photo .feature-art {
-  background: radial-gradient(circle at 50% 48%, #d2a500 0 2%, transparent 2.5%), linear-gradient(135deg, #202b26, #604e26 48%, #111);
+  background: radial-gradient(circle at 50% 48%, #d80d12 0 2%, transparent 2.5%), linear-gradient(135deg, #241719, #5a171b 48%, #111);
 }
 
 .feature-bike .feature-art {
-  background: linear-gradient(155deg, #393936, #111 48%, #302e26);
+  background: linear-gradient(155deg, #393536, #111 48%, #321719);
 }
 
 .feature-bike .feature-art i {
@@ -397,7 +397,7 @@ h1 em {
 }
 
 .about .eyebrow {
-  color: #927900;
+  color: #a90b12;
 }
 
 .about-copy > p:last-child {
