@@ -449,17 +449,10 @@ h1 em {
   box-shadow: 0 30px 70px rgba(0, 0, 0, 0.3);
 }
 
-.feature-photo {
-  grid-column: span 5;
-}
-
+.feature-photo,
 .feature-bike,
 .feature-notes {
-  grid-column: span 7;
-}
-
-.feature-notes {
-  grid-column: 6 / span 7;
+  grid-column: span 4;
 }
 
 .feature-art {
