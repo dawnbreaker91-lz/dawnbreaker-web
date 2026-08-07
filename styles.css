@@ -297,7 +297,7 @@ h1 em {
   overflow: hidden;
   background-image:
     linear-gradient(90deg, rgba(9, 9, 9, 0.12), transparent 38%),
-    url("./hero-dawn-road.png");
+    url("./hero-dawn-road.jpg");
   background-position: center calc(50% + var(--hero-shift));
   background-size: cover;
   will-change: background-position;
