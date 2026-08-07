@@ -2,6 +2,7 @@
   const body = document.body;
   const root = document.documentElement;
   const header = document.querySelector(".site-header");
+  const backToTop = document.querySelector(".back-to-top");
   const prefersReducedMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)",
   ).matches;
@@ -42,6 +43,13 @@
     }
     header?.classList.toggle("is-scrolled", window.scrollY > 36);
 
+    const showBackToTop = window.scrollY > Math.max(520, window.innerHeight * 0.72);
+    backToTop?.classList.toggle("is-visible", showBackToTop);
+    if (backToTop) {
+      backToTop.tabIndex = showBackToTop ? 0 : -1;
+      backToTop.setAttribute("aria-hidden", showBackToTop ? "false" : "true");
+    }
+
     const marker = window.scrollY + Math.min(window.innerHeight * 0.36, 260);
     let activeId = "top";
     sections.forEach((section) => {
@@ -66,6 +74,10 @@
   };
 
   schedulePageUpdate();
+  backToTop?.addEventListener("click", () => {
+    backToTop.blur();
+    window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" });
+  });
   window.addEventListener("scroll", schedulePageUpdate, { passive: true });
   window.addEventListener("resize", schedulePageUpdate);
   window.addEventListener("hashchange", schedulePageUpdate);
