@@ -56,14 +56,14 @@ a {
   bottom: clamp(18px, 2.4vw, 38px);
   display: grid;
   place-content: center;
-  width: 60px;
-  height: 60px;
+  width: 68px;
+  height: 68px;
   padding: 0;
   overflow: hidden;
   border: 0;
   border-radius: 50%;
-  background: rgba(9, 9, 9, 0.9);
-  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.28);
+  background: radial-gradient(circle, rgba(9, 9, 9, 0.98) 0 61%, transparent 62%), repeating-conic-gradient(from 0deg, rgba(240, 238, 231, 0.38) 0deg 1.4deg, transparent 1.4deg 12deg), rgba(9, 9, 9, 0.96);
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.34), inset 0 0 0 1px rgba(240, 238, 231, 0.06);
   color: var(--paper);
   cursor: pointer;
   opacity: 0;
@@ -74,25 +74,28 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
-.back-to-top::before,
-.back-to-top::after {
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  content: "";
-  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2px));
-  mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2px));
-  pointer-events: none;
-}
-
 .back-to-top::before {
-  background: rgba(240, 238, 231, 0.42);
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(240, 238, 231, 0.12);
+  border-radius: 50%;
+  background: radial-gradient(circle at 36% 28%, rgba(240, 238, 231, 0.08), transparent 35%), #0b0b0a;
+  box-shadow: inset 0 0 16px rgba(0, 0, 0, 0.72);
+  content: "";
+  pointer-events: none;
 }
 
 .back-to-top::after {
   --ring-fill: 0deg;
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
   background: conic-gradient(from 0deg, #7f0d12 0deg, #a30d13 var(--ring-fill), transparent var(--ring-fill), transparent 360deg);
   filter: drop-shadow(0 0 5px rgba(143, 17, 22, 0.55));
+  content: "";
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 4px), #000 calc(100% - 3px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 4px), #000 calc(100% - 3px));
+  pointer-events: none;
   transition: --ring-fill 880ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -104,16 +107,49 @@ a {
 }
 
 .back-to-top span {
-  margin-bottom: 3px;
-  color: var(--paper);
-  font-family: Arial, sans-serif;
-  font-size: 19px;
-  font-weight: 300;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 19px;
+  height: 1px;
+  font-size: 0;
+  background: linear-gradient(90deg, rgba(240, 238, 231, 0.7), #b31318 78%);
+  box-shadow: 0 0 5px rgba(163, 13, 19, 0.4);
+  transform: rotate(-125deg);
+  transform-origin: 0 50%;
+  transition: transform 720ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.back-to-top span::before {
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 7px;
+  height: 7px;
+  border: 1px solid rgba(240, 238, 231, 0.54);
+  border-radius: 50%;
+  background: #0b0b0a;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.45);
+  content: "";
+}
+
+.back-to-top span::after {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  border-left: 4px solid #b31318;
+  content: "";
 }
 
 .back-to-top b {
+  position: absolute;
+  right: 0;
+  bottom: 11px;
+  left: 0;
   color: #aaa79e;
-  font-size: 7px;
+  font-size: 6px;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-indent: 0.16em;
@@ -133,6 +169,10 @@ a {
 
 .back-to-top:hover::after {
   --ring-fill: 360deg;
+}
+
+.back-to-top:hover span {
+  transform: rotate(-20deg);
 }
 
 .back-to-top:active {
@@ -946,6 +986,18 @@ footer p:last-child {
     height: 56px;
   }
 
+  .back-to-top::before {
+    inset: 7px;
+  }
+
+  .back-to-top span {
+    width: 16px;
+  }
+
+  .back-to-top b {
+    bottom: 9px;
+  }
+
   .nav-index {
     padding: 10px;
     font-size: 9px;
@@ -1066,6 +1118,8 @@ footer p:last-child {
 
   .back-to-top,
   .back-to-top::before,
+  .back-to-top::after,
+  .back-to-top span,
   .feature-art i,
   .feature-art i::after {
     transition: none;
