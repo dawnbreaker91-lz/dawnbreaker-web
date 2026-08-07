@@ -579,21 +579,42 @@ h1 em {
   height: 180px;
   border: 1px solid rgba(240, 238, 231, 0.3);
   border-radius: 50%;
-  transition: border-color 320ms ease, transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 0 0 rgba(143, 17, 22, 0);
+  transition: border-color 480ms ease, transform 620ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 480ms ease;
+}
+
+.feature-art i::after {
+  position: absolute;
+  inset: -5px;
+  border: 3px solid transparent;
+  border-top-color: #a30d13;
+  border-right-color: #a30d13;
+  border-radius: inherit;
+  content: "";
+  opacity: 0;
+  filter: drop-shadow(0 0 5px rgba(143, 17, 22, 0.5));
+  transform: rotate(-135deg) scale(0.96);
+  transition: opacity 180ms ease, transform 760ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .feature-card:hover .feature-art > span {
-  color: var(--accent);
-  transform: translate3d(6px, -5px, 0);
+  color: var(--paper);
+  transform: translate3d(4px, -3px, 0) scale(1.025);
 }
 
 .feature-card:hover .feature-art i {
-  border-color: rgba(225, 6, 0, 0.62);
+  border-color: #7f0d12;
+  box-shadow: 0 0 24px rgba(143, 17, 22, 0.22), inset 0 0 18px rgba(143, 17, 22, 0.08);
   transform: scale(1.08);
 }
 
+.feature-card:hover .feature-art i::after {
+  opacity: 1;
+  transform: rotate(225deg) scale(1);
+}
+
 .feature-photo .feature-art {
-  background: radial-gradient(circle at 50% 48%, #d80d12 0 2%, transparent 2.5%), linear-gradient(135deg, #241719, #5a171b 48%, #111);
+  background: linear-gradient(135deg, #241719, #5a171b 48%, #111);
 }
 
 .feature-bike .feature-art {
@@ -1047,7 +1068,9 @@ footer p:last-child {
   }
 
   .back-to-top,
-  .back-to-top::before {
+  .back-to-top::before,
+  .feature-art i,
+  .feature-art i::after {
     transition: none;
   }
 }
